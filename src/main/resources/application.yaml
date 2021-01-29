@@ -1,0 +1,25 @@
+apache:
+  rocketmq:
+    consumer:
+      PushConsumer: flab-data-core-PushConsumer
+    namesrvAddr: 172.17.162.225:9876
+    producer:
+      producerGroup: flab-data-core-PushProducer
+resteasy:
+  host: 0.0.0.0
+  port: 18831
+  rootPath: /
+  jaxrs:
+    app:
+      registration: property
+      classes: com.rocketmq.configuration.JaxrsApplication
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - shutdown
+  endpoint:
+    shutdown:
+      enabled: true
